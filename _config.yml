@@ -50,4 +50,4 @@ exclude:
   - LICENSE
   - README.md
 
-baseurl: "/dissect-project.github.io/"
+baseurl: "/jekyll-serif-theme/"
