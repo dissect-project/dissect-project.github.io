@@ -3,12 +3,12 @@ permalink: pretty
 title: 'DISSECT'
 
 logo:
-  mobile: "images/logo/logo-short.png"
+  mobile: "images/logo/small.png"
   mobile_height: "32px"
   mobile_width: "32px"
-  desktop: "images/logo/logo-short.png"
-  desktop_height: "50px"
-  desktop_width: "200px"
+  desktop: "images/logo/small.png"
+  desktop_height: "60px"
+  desktop_width: "120px"
 
 home: 
   limit_services: 6
