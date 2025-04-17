@@ -1,5 +1,5 @@
 ---
-title: Digital InfraStructure SECurity assessmenT
+title: DISSECT
 layout: home
 description: A research group dedicated to create security assessment tools to analyze the security posture of online services.
 intro_image: "images/illustrations/DISSECT.png"
