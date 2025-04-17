@@ -1,7 +1,7 @@
 ---
-title: Jekyll Serif Theme
+title: Digital InfraStructure SECurity assessmenT
 layout: home
-description: Jekyll Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
+description: A research group dedicated to create security assessment tools to analyze the security posture of online services.
 intro_image: "images/illustrations/DISSECT.png"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
