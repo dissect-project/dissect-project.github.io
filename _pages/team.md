@@ -3,24 +3,43 @@ permalink: /team/
 layout: splash
 title: "Team"
 excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
-feature_row:
+member_row:
   - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Member 1"
+    excerpt: ""
   - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Member 2"
+    excerpt: ""
   - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Member 3"
+    excerpt: ""
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Member 4"
+    excerpt: ""
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Member 5"
+    excerpt: ""
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Member 6"
+    excerpt: ""
+partner_row:
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Partner 1"
+    excerpt: ""
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Partner 2"
+    excerpt: ""
+  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    title: "Partner 3"
+    excerpt: ""
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-# People
+# Members
 
-{% include feature_row %}
+{% include member_row %}
 
 # Partners
 
-{% include feature_row %}
+{% include partner_row %}
