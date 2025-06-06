@@ -1,6 +1,7 @@
 ---
 permalink: /team/
 layout: single
+title: "Team"
 gallery:
   - url: /assets/images/unsplash-gallery-image-1-th.jpg
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
@@ -47,16 +48,6 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-# Partners (version 1)
-
-{% include gallery %}
-
-# Partners (version 2)
-
-{% include feature_row %}
-
-# Team (version 1)
-
 - <a href="">Person With Long Name A</a>
 - <a href="">Person With Long Name B</a>
 - <a href="">Person With Long Name C</a>
@@ -70,3 +61,11 @@ feature_row:
 | <a href="">Person With Long Name C</a> | <a href="">Link</a> |
 | <a href="">Person With Long Name D</a> | <a href="">Link</a> |
 | <a href="">Person With Long Name E</a> | <a href="">Link</a> |
+
+# Partners (version 1)
+
+{% include gallery %}
+
+# Partners (version 2)
+
+{% include feature_row %}
