@@ -24,6 +24,10 @@ gallery:
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 5"
     title: "Image 3 title caption"
+  - url: /assets/images/unsplash-gallery-image-1-th.jpg
+    image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+    alt: "placeholder image 6"
+    title: "Image 3 title caption"
 
 ---
 
@@ -35,7 +39,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {% include gallery %}
 
 # Team
-å
+
 | ----------------------- | ------------------- |
 | Person With Long Name A | <a href="">Link</a> |
 | Person With Long Name B | <a href="">Link</a> |
