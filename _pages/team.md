@@ -1,8 +1,6 @@
 ---
 permalink: /team/
 layout: single
-title: "Team"
-excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
 gallery:
   - url: /assets/images/unsplash-gallery-image-1-th.jpg
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
