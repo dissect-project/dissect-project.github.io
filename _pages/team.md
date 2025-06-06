@@ -49,9 +49,6 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{: .text-justify}
-
 # Partners (version 1)
 
 {% include gallery %}
@@ -60,7 +57,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% include feature_row %}
 
-# Team
+# Team (version 1)
+
+- <a href="">Person With Long Name A</a>
+- <a href="">Person With Long Name B</a>
+- <a href="">Person With Long Name C</a>
+- <a href="">Person With Long Name D</a>
+
+# Team (version 2)
 
 | -------------------------------------- | ------------------- |
 | <a href="">Person With Long Name A</a> | <a href="">Link</a> |
