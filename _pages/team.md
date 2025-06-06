@@ -13,15 +13,6 @@ member_row:
   - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     title: "Member 3"
     excerpt: ""
-  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Member 4"
-    excerpt: ""
-  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Member 5"
-    excerpt: ""
-  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
-    title: "Member 6"
-    excerpt: ""
 partner_row:
   - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     title: "Partner 1"
