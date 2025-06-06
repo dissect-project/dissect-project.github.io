@@ -3,7 +3,7 @@ permalink: /team/
 layout: single
 title: "Team"
 excerpt: "Minimal Mistakes is a flexible two-column Jekyll theme."
-gallery1:
+gallery:
   - url: /assets/images/unsplash-gallery-image-1-th.jpg
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 1"
@@ -16,8 +16,7 @@ gallery1:
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 3"
     title: "Image 3 title caption"
-
-gallery2:
+gallery_2:
   - url: /assets/images/unsplash-gallery-image-1-th.jpg
     image_path: /assets/images/unsplash-gallery-image-1-th.jpg
     alt: "placeholder image 1"
@@ -36,8 +35,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 # Team
 
-{% include gallery1 %}
+{% include gallery %}
 
 # Partners
 
-{% include gallery2 %}
+{% include gallery_2 %}
