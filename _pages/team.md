@@ -40,9 +40,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 # Team
 
-| ----------------------- | ------------------- |
-| Person With Long Name A | <a href="">Link</a> |
-| Person With Long Name B | <a href="">Link</a> |
-| Person With Long Name C | <a href="">Link</a> |
-| Person With Long Name D | <a href="">Link</a> |
-| Person With Long Name E | <a href="">Link</a> |
+| -------------------------------------- | ------------------- |
+| <a href="">Person With Long Name A</a> | <a href="">Link</a> |
+| <a href="">Person With Long Name B</a> | <a href="">Link</a> |
+| <a href="">Person With Long Name C</a> | <a href="">Link</a> |
+| <a href="">Person With Long Name D</a> | <a href="">Link</a> |
+| <a href="">Person With Long Name E</a> | <a href="">Link</a> |
