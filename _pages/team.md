@@ -26,11 +26,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {% include gallery %}
 
 # Team
-
-| Member   |                     |
-| -------- | ------------------- |
-| Person A | <a href="">Link</a> |
-| Person B | <a href="">Link</a> |
-| Person C | <a href="">Link</a> |
-| Person D | <a href="">Link</a> |
-| Person E | <a href="">Link</a> |
+å
+| ----------------------- | ------------------- |
+| Person With Long Name A | <a href="">Link</a> |
+| Person With Long Name B | <a href="">Link</a> |
+| Person With Long Name C | <a href="">Link</a> |
+| Person With Long Name D | <a href="">Link</a> |
+| Person With Long Name E | <a href="">Link</a> |
