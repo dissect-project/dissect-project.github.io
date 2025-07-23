@@ -4,7 +4,7 @@ layout: single
 title: "About us"
 ---
 
-**DISSECT** is a research-driven initiative led by faculty members from the Department of Informatics at the University of Minho, in collaboration with researchers from INESC TEC. The project is dedicated to advancing the adoption of cybersecurity best practices across internet-based services, with a particular emphasis on supporting public sector institutions.
+**DISSECT** is a research-driven initiative led by faculty members from the Department of Informatics at the University of Minho, in collaboration with researchers from INESC TEC. The project is dedicated to advancing the adoption of cybersecurity best practices across internet-based services, with a particular emphasis on supporting public sector institutions.{: .text-justify}
 
 To fulfill this mission, DISSECT develops innovative tools and conducts rigorous studies aimed at assessing the cybersecurity posture of services exposed to the public. These efforts are designed to encourage the implementation of best cybersecurity practices and to provide empirical evidence that informs the development, enforcement, and evaluation of relevant public policies.
 
@@ -18,3 +18,4 @@ The assessment of online services must not interfere with their normal functioni
 Diagnostic studies rely exclusively on techniques that inspect publicly accessible information. Under no circumstances are methods involving system breaches, vulnerability exploitation, or unauthorized access employed.
 4. **Responsible Disclosure and Data Privacy**
 Results are published only in aggregated form, without revealing specific vulnerabilities or service-level weaknesses. This approach safeguards the integrity of the assessed platforms and prevents the inadvertent exposure of systems to malicious exploitation.
+{: .text-justify}
