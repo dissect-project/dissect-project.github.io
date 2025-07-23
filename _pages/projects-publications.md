@@ -3,7 +3,7 @@ permalink: /projects-publications/
 layout: single
 ---
 
-# Publications 
+**Publications** 
 
 Ribeiro D., Fonte V., Ramos LF, Silva JMC., **Assessing the information security posture of online public services worldwide: Technical insights, trends, and policy implications**, Government Information Quarterly 42 (2025) 102031. [link](https://doi.org/10.1016/j.giq.2025.102031)
 
@@ -17,4 +17,4 @@ J.M.C. Silva and V. Fonte, **Data security and trustworthiness in online public 
 
 L. F. M. Ramos and J.M.C. Silva, **Privacy and data protection concerns regarding the use of blockchains in smart cities**, in Proceedings of the 12th international conference on theory and practice of electronic governance (ICEGOV), 2019. [link](https://doi.org/10.1145/3326365.3326410)
 
-# Projects
+**Projects**
