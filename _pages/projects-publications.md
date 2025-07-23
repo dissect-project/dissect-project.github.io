@@ -3,6 +3,8 @@ permalink: /projects-publications/
 layout: single
 ---
 
+# Publications 
+
 Ribeiro D., Fonte V., Ramos LF, Silva JMC., **Assessing the information security posture of online public services worldwide: Technical insights, trends, and policy implications**, Government Information Quarterly 42 (2025) 102031. [link](https://doi.org/10.1016/j.giq.2025.102031)
 
 Cardoso WR, Ribeiro AD, Silva JMC., **Expert Systems in Information Security: A Comprehensive Exploration of Awareness Strategies Against Social Engineering Attacks**, in World Conference on Information Systems and Technologies (2024). [link](https://link.springer.com/chapter/10.1007/978-3-031-60218-4_4)
