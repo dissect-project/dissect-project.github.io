@@ -4,16 +4,17 @@ layout: single
 title: "About"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{: .text-justify}
+**DISSECT** is a research-driven initiative led by faculty members from the Department of Informatics at the University of Minho, in collaboration with researchers from INESC TEC. The project is dedicated to advancing the adoption of cybersecurity best practices across internet-based services, with a particular emphasis on supporting public sector institutions.
 
-# Header 1
+To fulfill this mission, DISSECT develops innovative tools and conducts rigorous studies aimed at assessing the cybersecurity posture of services exposed to the public. These efforts are designed to encourage the implementation of best cybersecurity practices and to provide empirical evidence that informs the development, enforcement, and evaluation of relevant public policies.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-{: .text-justify}
+The project’s research activities are guided by four core principles:
 
-# Header 2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{: .text-justify}
+1. **Scientific Rigor and Reproducibility**
+All methodologies employed must adhere to high standards of scientific rigor and be fully reproducible. This ensures that system administrators and policymakers can independently validate the findings published by DISSECT researchers.
+2. **Non-Intrusive Evaluation**
+The assessment of online services must not interfere with their normal functioning. All measurements are designed to be non-intrusive, ensuring that the quality of service provided by the evaluated platforms remains unaffected.
+3. **Ethical Data Collection**
+Diagnostic studies rely exclusively on techniques that inspect publicly accessible information. Under no circumstances are methods involving system breaches, vulnerability exploitation, or unauthorized access employed.
+4. **Responsible Disclosure and Data Privacy**
+Results are published only in aggregated form, without revealing specific vulnerabilities or service-level weaknesses. This approach safeguards the integrity of the assessed platforms and prevents the inadvertent exposure of systems to malicious exploitation.
