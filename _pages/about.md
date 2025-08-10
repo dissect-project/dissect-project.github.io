@@ -21,3 +21,6 @@ Diagnostic studies rely exclusively on techniques that inspect publicly accessib
 4. **Responsible Disclosure and Data Privacy**
 Results are published only in aggregated form, without revealing specific vulnerabilities or service-level weaknesses. This approach safeguards the integrity of the assessed platforms and prevents the inadvertent exposure of systems to malicious exploitation.
 {: .text-justify}
+
+<!-- Google Form Embed: Ensure your _config.yml has 'kramdown: parse_block_html: true' or 'markdown: GFM' for raw HTML support -->
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdq27dnDlOwJq2dEWh3sVWbEdk_SpLUbMvPie34oZ0pgA0jcw/viewform?embedded=true" width="640" height="351" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
