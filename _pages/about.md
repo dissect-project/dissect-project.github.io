@@ -20,10 +20,9 @@ The assessment of online services must not interfere with their normal functioni
 Diagnostic studies rely exclusively on techniques that inspect publicly accessible information. Under no circumstances are methods involving system breaches, vulnerability exploitation, or unauthorized access employed.
 4. **Responsible Disclosure and Data Privacy**
 Results are published only in aggregated form, without revealing specific vulnerabilities or service-level weaknesses. This approach safeguards the integrity of the assessed platforms and prevents the inadvertent exposure of systems to malicious exploitation.
+{: .text-justify}
 
 _If you prefer not to have your domain included in DISSECT’s research, please let us know by completing the form below, and we will fully respect your decision._
-
-{: .text-justify}
 
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdq27dnDlOwJq2dEWh3sVWbEdk_SpLUbMvPie34oZ0pgA0jcw/viewform?embedded=true" width="640" height="351" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
