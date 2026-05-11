@@ -55,4 +55,4 @@ Afonso Ferreira. _Dissertation subject_: **Performance analysis of secure DNS so
 
 # External Collaborators
 
-Luis Ramos - Expert in Law and Informatics. [Personal website](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fgithub%2Ecom%2Flfmramos%2F&urlhash=4b6-&trk=public_profile_website)
+Luis Ramos - Expert in Law and Informatics. [Personal website](https://orcid.org/0000-0001-9105-3308)
