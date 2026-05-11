@@ -8,6 +8,7 @@ layout: single
 _Ongoing_
 
 **MOBOT2 - Manipulador Móvel Inteligente com Programação Intuitiva e Controlo Agnóstico**
+
 _Funding source_: CCDR-N N2030 em Copromoção – PITD
 _Project reference_: PP2025-0132
 
