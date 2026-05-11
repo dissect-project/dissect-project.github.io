@@ -5,7 +5,11 @@ layout: single
 
 **Publications** 
 
+Bruno Pereira, Beatriz Cepa, Cláudia Brito, João Marco Silva, Vera Rimmer, João Paulo, Tânia Esteves. **It Works on My Machine: A Systematization of Knowledge on Reproducibility and Replicability** in ML-Based Ransomware Detection Accepted for The 5th Workshop on Rethinking Malware Analysis. (WORMA), 2026. Co-located with IEEE EuroS&P.
+
 Ribeiro D., Fonte V., Ramos LF, Silva JMC., **Assessing the information security posture of online public services worldwide: Technical insights, trends, and policy implications**, Government Information Quarterly 42 (2025) 102031. [link](https://doi.org/10.1016/j.giq.2025.102031)
+
+Daniel Miranda, Rui Monteiro, and João Marco C Silva. **p4SD: A Lightweight Port Scan Detection for Programmable Networks**. In: International Conference on Software, Telecommunications and Computer Networks (SoftCOM), 2025, Split. [link](https://doi.org/10.23919/SoftCOM66362.2025.11197439)
 
 Cardoso WR, Ribeiro AD, Silva JMC., **Expert Systems in Information Security: A Comprehensive Exploration of Awareness Strategies Against Social Engineering Attacks**, in World Conference on Information Systems and Technologies (2024). [link](https://link.springer.com/chapter/10.1007/978-3-031-60218-4_4)
 

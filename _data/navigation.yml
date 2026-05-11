@@ -4,10 +4,10 @@ main:
     url: /about/
   - title: "Team"
     url: /team/
-  - title: "Projects & Publications"
+  - title: "Publications"
     url: /projects-publications/
   #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
+  - title: "Projects & Reports"
+    url: /projects/
   # - title: "Sitemap"
   #   url: /sitemap/
