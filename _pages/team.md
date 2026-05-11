@@ -29,20 +29,30 @@ feature_row:
 
 {% include feature_row %}
 
+# PhD Candidates
+
+Diogo Ribeiro. _Programme_: PDInf Doctoral Programme in Informatics. _Reseach topic_: **Trusted non-authoritative identification systems**.
+
+Fernando Moreira. _Programme_: PDInf Doctoral Programme in Informatics. _Reseach topic_: **Federated, Multimodal, and Explainable Liveness Detection for the Next-Generation EU Digital Identity Wallet**.
+
 # Master Students
 
-Paulo André Alegre Pinto. _Dissertation subject_: **Data Optimization Mechanisms in Intrusion Detection Systems**. Master’s in Informatics Engineering.{: .text-justify}
+Paulo André Pinto. _Dissertation subject_: **Data Optimization Mechanisms in Intrusion Detection Systems**. Master’s in Informatics Engineering.
 
-Vasco da Fonseca Teixeira. _Dissertation subject_: **Dynamic assessment of online service trust**. Master’s in Informatics Engineering.{: .text-justify}
+Vasco Teixeira. _Dissertation subject_: **Dynamic assessment of online service trust**. Master’s in Informatics Engineering.
 
-Martim José Amaro Redondo. _Dissertation subject_: **Dynamic evaluation of attack surfaces based on web code analysis**. Master’s in Informatics Engineering.{: .text-justify}
+Martim Redondo. _Dissertation subject_: **Dynamic evaluation of attack surfaces based on web code analysis**. Master’s in Informatics Engineering.
 
-Daniel Henrique Cracel Rodrigues. _Dissertation subject_: **Authentication mechanisms based on ISO 18103-5**. Master’s in Informatics Engineering.{: .text-justify}
+Daniel Rodrigues. _Dissertation subject_: **Authentication mechanisms based on ISO 18103-5**. Master’s in Informatics Engineering.
 
-Eduardo André Silva Cunha. _Dissertation subject_: **Dynamic attack trees based on threat models**. Master’s in Informatics Engineering.{: .text-justify}
+Eduardo Cunha. _Dissertation subject_: **Dynamic attack trees based on threat models**. Master’s in Informatics Engineering.
 
-Pedro Eira de Sousa. _Dissertation subject_: **A tool for longitudinal analysis of vulnerabilities**. Master’s in Informatics Engineering.{: .text-justify}
+Pedro Sousa. _Dissertation subject_: **A tool for longitudinal analysis of vulnerabilities**. Master’s in Informatics Engineering.
 
-Dárida Victória Tido Martins. _Dissertation subject_: **Data Governance and Cookie Policies in Portuguese Municipalities**. Master’s in Law and Informatics.{: .text-justify}
+Dárida Martins. _Dissertation subject_: **Data Governance and Cookie Policies in Portuguese Municipalities**. Master’s in Law and Informatics.
 
-Afonso Franco Ferreira. _Dissertation subject_: **Performance analysis of secure DNS solutions**. Master’s in Informatics Engineering.{: .text-justify}
+Afonso Ferreira. _Dissertation subject_: **Performance analysis of secure DNS solutions**. Master’s in Informatics Engineering.
+
+# External Collaborators
+
+Luis Ramos - Expert in Law and Informatics. [Personal website](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fgithub%2Ecom%2Flfmramos%2F&urlhash=4b6-&trk=public_profile_website)
