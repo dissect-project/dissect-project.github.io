@@ -28,3 +28,5 @@ feature_row:
 # Core research team
 
 {% include feature_row %}
+
+# Master Students
