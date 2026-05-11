@@ -30,7 +30,3 @@ Dantas B, Carvalho P, Lima SR, Silva JM. **Detection of anonymised traffic: Tor 
 J.M.C. Silva and V. Fonte, **Data security and trustworthiness in online public services: An assessment of Portuguese institutions**, in Proceedings of the 12th International Conference on Theory and Practice of Electronic Governance (ICEGOV), 2019. [link](https://doi.org/10.1145/3326365.3326411)
 
 L. F. M. Ramos and J.M.C. Silva, **Privacy and data protection concerns regarding the use of blockchains in smart cities**, in Proceedings of the 12th international conference on theory and practice of electronic governance (ICEGOV), 2019. [link](https://doi.org/10.1145/3326365.3326410)
-
-**Projects**
-
-_Coming Soon_
