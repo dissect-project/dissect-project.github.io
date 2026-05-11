@@ -18,3 +18,25 @@ Soares, D., Amaral, L., Lameiras, M., Carvalho, J., Ferreira, L. M., and Silva, 
 
 ITU - Blockchain for Smart Sustainable Cities (2020). United 4 Smart Sustainable Cities.
 ISBN: 978-92-61-32121-5 [link](https://u4ssc.itu.int)
+
+**Open-Source Prototypes** 
+
+**ICARUS - Intelligence-driven Contextual Assessment of Risks in Unseen Scenarios**
+An open-source platform designed to correlate public Cyber Threat Intelligence (CTI) data, formatted in STIX, with telemetry collected from monitoring agents deployed on managed assets. The system also includes a dedicated module to quantify and track the temporal decay of threat relevance.
+_Project repository_: [Github](https://github.com/RicAlvesO/ICARUS/tree/main)
+
+**P4SD - Lightweight Data Plane Anomaly Detection**
+An open-source anomaly detection system tailored for P4-enabled network devices. It uses a cyclic fingerprint buffeer and frequency analysis to monitor for anomalous traffic without relying on attack signatures.
+_Project repository_: [Github](https://github.com/dissect-project/p4SD)
+
+**CRIBA - A Tool for Comprehensive Analysis of Cryptographic Ransomware’s I/O Behavior**
+CRIBA is an open-source framework designed to facilitate the systematic exploration, analysis, and comparative evaluation of input/output (I/O) behavior in Linux-based cryptographic ransomware.
+_Project repository_: [Githube](https://github.com/dsrhaslab/criba)
+
+**MPTCP security plugin for Linux**
+An add-on that extends the MultiPath TCP (MPTCP) daemon of Linux systems with a security mechanism preventing cross-path attacks in distributed IDS environments.
+_Project repository_: [Github](https://github.com/MPTCP-Lab/mini_httpd_mptcp)
+
+**MPTCP simulator**
+Extension of the CORE simulator to support the MPTCP protocol.
+_Project repository_: [Github](https://github.com/MPTCP-Lab/mptcp_test_bed)
