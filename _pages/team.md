@@ -30,3 +30,6 @@ feature_row:
 {% include feature_row %}
 
 # Master Students
+
+Paulo André Alegre Pinto. _Dissertation subject_: ** Data Optimization Mechanisms in Intrusion
+Detection Systems **. Master’s in Informatics Engineering.
