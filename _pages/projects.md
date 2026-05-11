@@ -5,8 +5,12 @@ layout: single
 
 
 **Projects**
+_Ongoing_
 
-_Coming Soon_
+**MOBOT2 - Manipulador Móvel Inteligente com Programação Intuitiva e Controlo Agnóstico**
+_Funding source_: CCDR-N N2030 em Copromoção – PITD
+_Project reference_: PP2025-0132
+
 
 **Reports**
 
@@ -31,7 +35,7 @@ _Project repository_: [Github](https://github.com/dissect-project/p4SD)
 
 **CRIBA - A Tool for Comprehensive Analysis of Cryptographic Ransomware’s I/O Behavior**
 CRIBA is an open-source framework designed to facilitate the systematic exploration, analysis, and comparative evaluation of input/output (I/O) behavior in Linux-based cryptographic ransomware.
-_Project repository_: [Githube](https://github.com/dsrhaslab/criba)
+_Project repository_: [Github](https://github.com/dsrhaslab/criba)
 
 **MPTCP security plugin for Linux**
 An add-on that extends the MultiPath TCP (MPTCP) daemon of Linux systems with a security mechanism preventing cross-path attacks in distributed IDS environments.
