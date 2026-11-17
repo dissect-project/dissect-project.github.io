@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found">
+  <section class="nf">
+    <div class="container">
+      <p class="tag" aria-hidden="true">[ <span>404</span> ]</p>
+      <h1>Page not found</h1>
+      <p class="code">HTTP/2 404 · nothing to assess here.</p>
+      <p><a class="btn btn-primary" href="/">Back to the home page</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    padding-block: clamp(4rem, 12vw, 8rem);
+  }
+  .code {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+</style>

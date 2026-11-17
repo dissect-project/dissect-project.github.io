@@ -1,0 +1,160 @@
+---
+import Icon from './Icon.astro';
+import type { Repo } from '../lib/github';
+import { getPapers } from '../lib/papers';
+
+interface Props {
+  repo: Repo;
+}
+const { repo } = Astro.props;
+const featured = repo.featured;
+const paper = featured?.paper ? getPapers().find((p) => p.key === featured.paper) : undefined;
+if (featured?.paper && !paper) console.warn(`[site.yaml] featured repo "${repo.name}" references unknown paper key "${featured.paper}"`);
+
+const updated = new Date(repo.pushedAt);
+const updatedLabel = updated.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<article class:list={['card', 'repo', { featured: !!featured }]}>
+  <div class="top">
+    <h3>
+      <a href={repo.url}>
+        <span class="org" aria-hidden="true">~/</span>{repo.name}
+      </a>
+    </h3>
+    {featured && <span class="badge">featured</span>}
+  </div>
+
+  {featured?.description && <p class="long">{featured.description}</p>}
+  {repo.description && <p class:list={['desc', { muted: !!featured?.description }]}>{repo.description}</p>}
+  {!repo.description && !featured?.description && <p class="desc muted">No description.</p>}
+
+  <ul class="meta" role="list">
+    {
+      repo.language && (
+        <li>
+          <span class="dot" aria-hidden="true" />
+          {repo.language}
+        </li>
+      )
+    }
+    <li>
+      <Icon name="star" size={14} />
+      <span class="visually-hidden">Stars:</span>
+      {repo.stars}
+    </li>
+    <li>updated <time datetime={repo.pushedAt}>{updatedLabel}</time></li>
+  </ul>
+
+  {
+    paper && (
+      <p class="paper">
+        <span aria-hidden="true">↳ </span>
+        paper: <a href={`/publications/#${paper.key}`} set:html={paper.title} />
+      </p>
+    )
+  }
+</article>
+
+<style>
+  .repo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    height: 100%;
+    position: relative;
+  }
+  .featured {
+    border-color: var(--border-strong);
+  }
+  .featured::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 1.15rem;
+    width: 3px;
+    height: 1.6rem;
+    background: var(--accent-fill);
+    border-radius: 0 2px 2px 0;
+  }
+  .top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+    overflow-wrap: anywhere;
+  }
+  h3 a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+  h3 a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  /* Make the whole card clickable via the title link */
+  h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+  .paper a {
+    position: relative;
+    z-index: 1;
+  }
+  .org {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--box-fg);
+    background: var(--box-bg);
+    padding: 0.15em 0.5em;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .desc,
+  .long {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+  .muted {
+    color: var(--muted);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .meta li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--accent-fill);
+  }
+  .paper {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+</style>

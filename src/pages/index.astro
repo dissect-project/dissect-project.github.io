@@ -1,0 +1,305 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import RepoCard from '../components/RepoCard.astro';
+import PubEntry from '../components/PubEntry.astro';
+import TeamCard from '../components/TeamCard.astro';
+import Todo from '../components/Todo.astro';
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+import heroLight from '../../brand/1-logo-full-name/dissect-logo-full-name-light.svg';
+import heroDark from '../../brand/1-logo-full-name/dissect-logo-full-name-dark.svg';
+import { site, partners, isTodo, githubOrgUrl } from '../lib/site';
+import { getRepos } from '../lib/github';
+import { getPapers } from '../lib/papers';
+import { getTeam, memberNameKeys } from '../lib/team';
+
+const { repos } = await getRepos();
+const papers = getPapers();
+const latest = papers.slice(0, 3);
+const team = await getTeam();
+const memberKeys = memberNameKeys(team.all);
+
+// Partner logos live in src/assets/partners/
+const partnerLogos = import.meta.glob<{ default: ImageMetadata }>('../assets/partners/*.{svg,png,jpg,jpeg,webp}', {
+  eager: true,
+});
+const logoFor = (file?: string) => (file ? partnerLogos[`../assets/partners/${file}`]?.default : undefined);
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <h1 id="hero-title">
+        <img class="on-light logo" src={heroLight.src} width="414" height="100" alt={`${site.name}: ${site.fullName}`} />
+        <img class="on-dark logo" src={heroDark.src} width="414" height="100" alt={`${site.name}: ${site.fullName}`} />
+      </h1>
+      <p class="mission">
+        {site.mission}<span class="cursor" aria-hidden="true"></span>
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#tools">Tools <Icon name="arrow-right" size={16} class="arrow" /></a>
+        <a class="btn btn-ghost" href="/publications/">Publications</a>
+      </div>
+      <p class="stats" aria-label="At a glance">
+        <span><b>{repos.length}</b> open-source tools</span>
+        <span aria-hidden="true">/</span>
+        <span><b>{papers.length}</b> publications</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <Section id="about" tag="about" title="About">
+    <div class="about">
+      {site.about.map((para) => <p>{isTodo(para) ? <Todo text={para} /> : para}</p>)}
+    </div>
+  </Section>
+
+  <!-- Research areas -->
+  <Section id="research" tag="research" title="Research areas">
+    <ol class="areas" role="list">
+      {
+        site.research.map((a, i) => (
+          <li class="card area">
+            <span class="num" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3>{a.title}</h3>
+            <p>{a.description}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </Section>
+
+  <!-- Tools -->
+  <Section
+    id="tools"
+    tag="tools"
+    title="Tools & repositories"
+    lead="Open-source tools built alongside our research, pulled from GitHub at build time."
+  >
+    {
+      repos.length > 0 ? (
+        <ul class="grid" role="list">
+          {repos.map((r) => (
+            <li>
+              <RepoCard repo={r} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>
+          See our repositories on <a href={githubOrgUrl}>GitHub</a>.
+        </p>
+      )
+    }
+    <p class="more">
+      <a href={githubOrgUrl}>All repositories on GitHub <Icon name="arrow-up-right" size={14} class="inline-icon" /></a>
+    </p>
+  </Section>
+
+  <!-- Publications -->
+  <Section id="publications" tag="publications" title="Latest publications">
+    {
+      latest.length > 0 ? (
+        <div class="pubs">
+          {latest.map((p) => (
+            <PubEntry paper={p} memberKeys={memberKeys} />
+          ))}
+        </div>
+      ) : (
+        <p>
+          <Todo text="TODO: add publications to src/data/papers.bib" />
+        </p>
+      )
+    }
+    <p class="more">
+      <a class="btn btn-ghost" href="/publications/">All publications <Icon name="arrow-right" size={16} class="arrow" /></a>
+    </p>
+  </Section>
+
+  <!-- Team -->
+  <Section id="team" tag="team" title="Team">
+    <ul class="grid" role="list">
+      {
+        team.current.map((m) => (
+          <li>
+            <TeamCard member={m} />
+          </li>
+        ))
+      }
+    </ul>
+    {
+      team.alumni.length > 0 && (
+        <>
+          <h3 class="sub">Alumni</h3>
+          <ul class="grid" role="list">
+            {team.alumni.map((m) => (
+              <li>
+                <TeamCard member={m} />
+              </li>
+            ))}
+          </ul>
+        </>
+      )
+    }
+  </Section>
+
+  <!-- Partners (hidden when partners.yaml is empty) -->
+  {
+    partners.length > 0 && (
+      <Section id="partners" tag="partners" title="Partners">
+        <ul class="partners" role="list">
+          {partners.map((p) => {
+            const logo = logoFor(p.logo);
+            const inner = (
+              <>
+                {logo ? (
+                  <Image src={logo} alt={p.name} height={56} class="plogo" />
+                ) : (
+                  <span class="pname">{p.name}</span>
+                )}
+                {p.description && <span class="pdesc">{p.description}</span>}
+              </>
+            );
+            return <li class="card partner">{p.url ? <a href={p.url}>{inner}</a> : inner}</li>;
+          })}
+        </ul>
+      </Section>
+    )
+  }
+</Base>
+
+<script>
+  import '../scripts/publications.ts';
+</script>
+
+<style>
+  .hero {
+    padding-block: clamp(3.5rem, 10vw, 7.5rem) clamp(3rem, 8vw, 6rem);
+  }
+  h1 {
+    margin: 0 0 2rem;
+  }
+  .logo {
+    width: min(100%, 34rem);
+    height: auto;
+  }
+  .mission {
+    max-width: 38rem;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 0.32em;
+    margin-left: 0.3em;
+    background: var(--accent-fill);
+    vertical-align: baseline;
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 2.5rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .stats b {
+    color: var(--fg);
+    font-weight: 700;
+  }
+
+  .about {
+    max-width: 44rem;
+    font-size: 1.0625rem;
+  }
+
+  .areas {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  }
+  .area h3 {
+    margin: 0.5rem 0 0.4rem;
+  }
+  .area p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+  .num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .grid > li {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid > li > :global(*) {
+    flex: 1;
+  }
+  .more {
+    margin: 1.75rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  .more a:not(.btn) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .sub {
+    margin: 2.5rem 0 1rem;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+
+  .partners {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
+  }
+  .partner,
+  .partner a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    text-align: center;
+  }
+  .partner a {
+    color: var(--fg);
+    text-decoration: none;
+    height: 100%;
+  }
+  .plogo {
+    height: 56px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .pname {
+    font-family: var(--font-mono);
+    font-weight: 600;
+  }
+  .pdesc {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+</style>

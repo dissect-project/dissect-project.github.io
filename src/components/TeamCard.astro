@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Todo from './Todo.astro';
+import { initials, type Member } from '../lib/team';
+import { isTodo } from '../lib/site';
+
+interface Props {
+  member: Member;
+}
+const { member } = Astro.props;
+const d = member.data;
+const { Content } = await render(member);
+const bioIsTodo = isTodo(member.body);
+
+const l = d.links ?? {};
+const links = [
+  l.email && { label: 'email', href: `mailto:${l.email}` },
+  l.website && { label: 'web', href: l.website },
+  l.orcid && { label: 'orcid', href: l.orcid },
+  l.scholar && { label: 'scholar', href: l.scholar },
+  l.github && { label: 'github', href: l.github },
+  l.linkedin && { label: 'linkedin', href: l.linkedin },
+].filter(Boolean) as { label: string; href: string }[];
+---
+
+<article class="card member">
+  <div class="head">
+    {
+      d.photo ? (
+        <Image src={d.photo} alt="" width={128} height={128} class="avatar" />
+      ) : (
+        <span class="avatar initials" aria-hidden="true">
+          {initials(d.name)}
+        </span>
+      )
+    }
+    <div>
+      <h3>{isTodo(d.name) ? <Todo text={d.name} /> : d.name}</h3>
+      <p class="role">{isTodo(d.role) ? <Todo text={d.role} /> : d.role}</p>
+    </div>
+  </div>
+  {
+    member.body?.trim() && (
+      <div class="bio">
+        {bioIsTodo ? <Todo text={member.body.trim()} /> : <Content />}
+      </div>
+    )
+  }
+  {
+    links.length > 0 && (
+      <ul class="meta-links" role="list">
+        {links.map((x) => (
+          <li>
+            <a href={x.href}>
+              [{x.label}]<span class="visually-hidden"> {d.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</article>
+
+<style>
+  .member {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .avatar {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+    border-radius: var(--radius);
+    object-fit: cover;
+    background: var(--box-bg);
+  }
+  .initials {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--box-fg);
+  }
+  h3 {
+    margin: 0;
+    font-size: 1.0625rem;
+  }
+  .role {
+    margin: 0.15rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+  .bio {
+    font-size: 0.9375rem;
+  }
+  .bio :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

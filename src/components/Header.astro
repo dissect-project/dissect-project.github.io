@@ -1,0 +1,206 @@
+---
+import logoLight from '../../brand/2-logo/dissect-logo-light.svg';
+import logoDark from '../../brand/2-logo/dissect-logo-dark.svg';
+import Icon from './Icon.astro';
+import { partners } from '../lib/site';
+
+const links = [
+  { href: '/#about', label: 'about' },
+  { href: '/#research', label: 'research' },
+  { href: '/#tools', label: 'tools' },
+  { href: '/publications/', label: 'publications' },
+  { href: '/#team', label: 'team' },
+  ...(partners.length ? [{ href: '/#partners', label: 'partners' }] : []),
+  { href: '/#contact', label: 'contact' },
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => href.replace(/\/$/, '') === path;
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="DISSECT home">
+      <img class="on-light" src={logoLight.src} width="123" height="32" alt="" />
+      <img class="on-dark" src={logoDark.src} width="123" height="32" alt="" />
+    </a>
+
+    <nav class="nav-wide" aria-label="Main">
+      <ul role="list">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <button type="button" class="icon-btn" data-theme-toggle aria-label="Toggle colour theme" aria-pressed="false">
+        <Icon name="moon" class="i-moon" />
+        <Icon name="sun" class="i-sun" />
+      </button>
+
+      <details class="nav-narrow">
+        <summary class="icon-btn" aria-label="Menu">
+          <Icon name="menu" class="i-open" />
+          <Icon name="close" class="i-close" />
+        </summary>
+        <nav aria-label="Main">
+          <ul role="list">
+            {
+              links.map((l) => (
+                <li>
+                  <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined}>
+                    <span aria-hidden="true">&gt; </span>
+                    {l.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 4rem;
+  }
+  .brand {
+    display: inline-flex;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+  .brand img {
+    height: 32px;
+    width: auto;
+  }
+  .nav-wide {
+    margin-left: auto;
+  }
+  .nav-wide ul {
+    display: flex;
+    gap: 0.25rem;
+  }
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--fg);
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
+  nav a[aria-current='page'] {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 0.35em;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .icon-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    color: var(--fg);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    list-style: none;
+  }
+  .icon-btn::-webkit-details-marker {
+    display: none;
+  }
+  .icon-btn:hover {
+    border-color: var(--border);
+  }
+
+  /* Theme icon: show the one for the theme you would switch to.
+     Icons are child components, so their classes need :global(). */
+  .icon-btn :global(.i-sun) {
+    display: none;
+  }
+  :global(:root[data-theme='dark']) .icon-btn :global(.i-sun) {
+    display: block;
+  }
+  :global(:root[data-theme='dark']) .icon-btn :global(.i-moon) {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .icon-btn :global(.i-sun) {
+      display: block;
+    }
+    :global(:root:not([data-theme='light'])) .icon-btn :global(.i-moon) {
+      display: none;
+    }
+  }
+
+  .nav-narrow {
+    display: none;
+  }
+  .icon-btn :global(.i-close),
+  details[open] .icon-btn :global(.i-open) {
+    display: none;
+  }
+  details[open] .icon-btn :global(.i-close) {
+    display: block;
+  }
+
+  @media (max-width: 56rem) {
+    .nav-wide {
+      display: none;
+    }
+    .actions {
+      margin-left: auto;
+    }
+    .nav-narrow {
+      display: block;
+    }
+    .nav-narrow nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem var(--gutter) 1rem;
+    }
+    .nav-narrow a {
+      display: flex;
+      min-height: 2.75rem;
+      font-size: 1rem;
+      padding: 0 0.25rem;
+    }
+    .nav-narrow a span {
+      color: var(--accent);
+      white-space: pre;
+    }
+  }
+</style>

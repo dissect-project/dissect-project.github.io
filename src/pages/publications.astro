@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import PubEntry from '../components/PubEntry.astro';
+import Todo from '../components/Todo.astro';
+import { getPapers, papersByYear, typeLabels, type PubType } from '../lib/papers';
+import { getTeam, memberNameKeys } from '../lib/team';
+
+const papers = getPapers();
+const groups = papersByYear(papers);
+const memberKeys = memberNameKeys((await getTeam()).all);
+
+const order: PubType[] = ['journal', 'conference', 'workshop', 'other'];
+const types = order.filter((t) => papers.some((p) => p.type === t));
+const counts = Object.fromEntries(types.map((t) => [t, papers.filter((p) => p.type === t).length]));
+---
+
+<Base title="Publications" description="Peer-reviewed publications from the DISSECT research group, grouped by year.">
+  <section class="page" aria-labelledby="pubs-title">
+    <div class="container">
+      <p class="tag" aria-hidden="true">[ <span>publications</span> ]</p>
+      <h1 id="pubs-title">Publications</h1>
+      <p class="lead">
+        {papers.length} publication{papers.length === 1 ? '' : 's'}, newest first. Names in{' '}
+        <strong class="member-sample">bold</strong> are DISSECT members.
+      </p>
+
+      {
+        types.length > 1 && (
+          <div class="filters" data-filters role="group" aria-label="Filter by type" hidden>
+            <button type="button" data-filter="all" aria-pressed="true">
+              all <span class="n">{papers.length}</span>
+            </button>
+            {types.map((t) => (
+              <button type="button" data-filter={t} aria-pressed="false">
+                {typeLabels[t].toLowerCase()} <span class="n">{counts[t]}</span>
+              </button>
+            ))}
+          </div>
+        )
+      }
+
+      {papers.length === 0 && <p><Todo text="TODO: add publications to src/data/papers.bib" /></p>}
+
+      {
+        groups.map(([year, list]) => (
+          <section class="year" data-year-group aria-labelledby={`y-${year}`}>
+            <h2 id={`y-${year}`}>{year}</h2>
+            <div>
+              {list.map((p) => (
+                <PubEntry paper={p} memberKeys={memberKeys} anchor />
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<script>
+  import '../scripts/publications.ts';
+</script>
+
+<style>
+  .page {
+    padding-block: clamp(2.5rem, 6vw, 4.5rem) var(--section-y);
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  .lead {
+    color: var(--muted);
+    max-width: 40rem;
+  }
+  .member-sample {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-fill);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.75rem 0 0.5rem;
+  }
+  .filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2.5rem;
+    padding: 0 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--fg);
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .filters button:hover {
+    border-color: var(--fg);
+  }
+  .filters button[aria-pressed='true'] {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+  .n {
+    opacity: 0.75;
+  }
+  .year {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
+  .year h2 {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--fg);
+  }
+  .year h2::before {
+    content: '## ';
+    color: var(--accent);
+  }
+  :global(.pub:target) {
+    outline: 2px solid var(--accent-fill);
+    outline-offset: 6px;
+    border-radius: 2px;
+  }
+</style>

@@ -1,0 +1,9 @@
+---
+// Visible marker for content that still has to be filled in.
+interface Props {
+  text?: string;
+}
+const { text = 'TODO' } = Astro.props;
+---
+
+<span class="todo">{text}</span>

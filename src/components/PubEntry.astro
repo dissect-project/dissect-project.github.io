@@ -1,0 +1,193 @@
+---
+import Icon from './Icon.astro';
+import { typeLabels, type Paper } from '../lib/papers';
+
+interface Props {
+  paper: Paper;
+  memberKeys: Set<string>;
+  headingLevel?: 3 | 4;
+  anchor?: boolean;
+}
+const { paper: p, memberKeys, headingLevel = 3, anchor = false } = Astro.props;
+const H = `h${headingLevel}` as 'h3' | 'h4';
+
+const links = [
+  p.doi && { label: 'doi', href: `https://doi.org/${p.doi}` },
+  p.pdf && { label: 'pdf', href: p.pdf },
+  p.code && { label: 'code', href: p.code },
+  p.slides && { label: 'slides', href: p.slides },
+  !p.doi && p.url && { label: 'link', href: p.url },
+].filter(Boolean) as { label: string; href: string }[];
+---
+
+<article class="pub" id={anchor ? p.key : undefined} data-type={p.type}>
+  <div class="side" aria-hidden="true">
+    <span class="type">{typeLabels[p.type]}</span>
+  </div>
+  <div class="body">
+    <H class="title" set:html={p.title} />
+    <p class="authors">
+      {
+        p.authors.map((a, i) => (
+          <>
+            {i > 0 && (i === p.authors.length - 1 ? ', and ' : ', ')}
+            {memberKeys.has(a.key) ? <strong class="member">{a.display}</strong> : a.display}
+          </>
+        ))
+      }
+    </p>
+    <p class="venue">
+      <span class="visually-hidden">{typeLabels[p.type]} paper. </span>
+      {p.venue && <em>{p.venue}</em>}
+      {p.venue && p.year && ', '}
+      {p.year}
+    </p>
+    <div class="actions">
+      {
+        links.length > 0 && (
+          <ul class="meta-links" role="list">
+            {links.map((l) => (
+              <li>
+                <a href={l.href}>
+                  [{l.label}]<span class="visually-hidden"> for “{p.title.replace(/<[^>]+>/g, '')}”</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <button type="button" class="cite" data-cite hidden>
+        <Icon name="copy" size={14} class="i-copy" />
+        <Icon name="check" size={14} class="i-check" />
+        <span class="cite-label">cite</span>
+        <span class="visually-hidden"> “{p.title.replace(/<[^>]+>/g, '')}” as BibTeX</span>
+      </button>
+      <details class="bib">
+        <summary>bibtex</summary>
+        <pre tabindex="0"><code>{p.bibtex}</code></pre>
+      </details>
+    </div>
+  </div>
+</article>
+
+<style>
+  .pub {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 1.25rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .pub:first-child {
+    border-top: 0;
+  }
+  @media (max-width: 40rem) {
+    .pub {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+  .type {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: lowercase;
+    padding-top: 0.2rem;
+  }
+  .type::before {
+    content: '# ';
+    color: var(--accent);
+  }
+  .title {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 650;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+    margin: 0 0 0.35rem;
+  }
+  .authors,
+  .venue {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+  .authors {
+    color: var(--muted);
+  }
+  .member {
+    color: var(--fg);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-fill);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+  .venue em {
+    font-style: italic;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    margin-top: 0.6rem;
+  }
+  .cite,
+  .bib summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 1.75rem;
+    padding: 0 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--fg);
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .cite:hover,
+  .bib summary:hover {
+    border-color: var(--fg);
+  }
+  .cite :global(.i-check),
+  .cite.copied :global(.i-copy) {
+    display: none;
+  }
+  .cite.copied :global(.i-check) {
+    display: block;
+    color: var(--accent);
+  }
+  .bib summary {
+    list-style: none;
+  }
+  .bib summary::-webkit-details-marker {
+    display: none;
+  }
+  .bib summary::before {
+    content: '+';
+    color: var(--accent);
+  }
+  .bib[open] summary::before {
+    content: '−';
+  }
+  .bib {
+    flex-basis: auto;
+  }
+  .bib[open] {
+    flex-basis: 100%;
+  }
+  .bib pre {
+    margin: 0.6rem 0 0;
+    padding: 0.9rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+    white-space: pre;
+  }
+</style>

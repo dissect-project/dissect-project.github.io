@@ -1,0 +1,133 @@
+---
+import wordLight from '../../brand/5-wordmark/dissect-wordmark-light.svg';
+import wordDark from '../../brand/5-wordmark/dissect-wordmark-dark.svg';
+import Todo from './Todo.astro';
+import { site, isTodo, githubOrgUrl } from '../lib/site';
+
+const year = new Date().getFullYear();
+const { email, address } = site.contact;
+const affiliation = [site.lab, site.university];
+---
+
+<footer class="site-footer" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <p class="tag" aria-hidden="true">[ <span>contact</span> ]</p>
+    <h2 id="contact-title" class="visually-hidden">Contact</h2>
+    <div class="cols">
+      <div>
+        <img class="on-light word" src={wordLight.src} width="112" height="26" alt="DISSECT" />
+        <img class="on-dark word" src={wordDark.src} width="112" height="26" alt="DISSECT" />
+        <p class="full">{site.fullName}</p>
+        <p class="aff">
+          {
+            affiliation.map((a, i) => (
+              <>
+                {i > 0 && <span aria-hidden="true"> · </span>}
+                {isTodo(a.name) ? <Todo text={a.name} /> : a.url ? <a href={a.url}>{a.name}</a> : a.name}
+              </>
+            ))
+          }
+        </p>
+      </div>
+
+      <dl>
+        <div>
+          <dt>email</dt>
+          <dd>{isTodo(email) ? <Todo text={email} /> : <a href={`mailto:${email}`}>{email}</a>}</dd>
+        </div>
+        <div>
+          <dt>address</dt>
+          <dd>
+            <address>
+              {
+                address.map((line, i) => (
+                  <>
+                    {i > 0 && <br />}
+                    {isTodo(line) ? <Todo text={line} /> : line}
+                  </>
+                ))
+              }
+            </address>
+          </dd>
+        </div>
+        <div>
+          <dt>github</dt>
+          <dd><a href={githubOrgUrl}>github.com/{site.github.org}</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <p class="copy">
+      <span>© {year} {site.name}</span>
+      <span aria-hidden="true">·</span>
+      <span>No cookies, no trackers.</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding-block: 3rem 2rem;
+    font-size: 0.9375rem;
+  }
+  .cols {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 48rem) {
+    .cols {
+      grid-template-columns: 1fr 1.2fr;
+    }
+  }
+  .word {
+    height: 26px;
+    width: auto;
+    margin-bottom: 0.75rem;
+  }
+  .full {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .aff {
+    margin: 0;
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 1rem;
+  }
+  dt {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  address {
+    font-style: normal;
+  }
+  .copy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+</style>
