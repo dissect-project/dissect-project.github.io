@@ -134,3 +134,7 @@ One-time setup: **Settings → Pages → Build and deployment → Source: GitHub
 - A Content-Security-Policy `<meta>` tag allows only same-origin scripts, styles, fonts and images. There are no inline scripts or styles. GitHub Pages cannot set HTTP headers, so `frame-ancestors` and HSTS are out of our hands (GitHub Pages enforces HTTPS itself).
 - The only scripts are `public/site.js` (theme and menu) and a small bundled module for the publication filters and cite button. The site works without JavaScript.
 - BibTeX titles are rendered as HTML only after escaping; `<i>`, `<b>`, `<em>`, `<strong>`, `<sup>` and `<sub>` are the only tags kept.
+
+## License
+
+Code: [MIT](LICENSE). The logos in `brand/` are DISSECT's visual identity and are not covered by the MIT license.
