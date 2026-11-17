@@ -1,0 +1,126 @@
+{
+  "fetchedAt": "2026-11-17T17:28:57.217Z",
+  "repos": [
+    {
+      "name": ".github",
+      "description": "",
+      "language": "",
+      "stars": 0,
+      "pushedAt": "2025-05-19T09:28:22Z",
+      "url": "https://github.com/dissect-project/.github",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "cert-info",
+      "description": "Web service that builds a domain's TLS certificate chain the way Firefox does and validates every certificate in it: trust, revocation (CRL/OCSP), Certificate Transparency, key pinning and NIST algorithm strength.",
+      "language": "Python",
+      "stars": 1,
+      "pushedAt": "2026-11-17T13:28:26Z",
+      "url": "https://github.com/dissect-project/cert-info",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "test",
+      "description": "Serif is a multi page business theme for Jekyll.",
+      "language": "SCSS",
+      "stars": 0,
+      "pushedAt": "2025-04-01T19:28:20Z",
+      "url": "https://github.com/dissect-project/test",
+      "homepage": "https://jekyll-serif.netlify.app",
+      "archived": true,
+      "fork": true
+    },
+    {
+      "name": "old-website",
+      "description": "Serif is a multi page business theme for Jekyll.",
+      "language": "SCSS",
+      "stars": 0,
+      "pushedAt": "2025-04-18T11:15:07Z",
+      "url": "https://github.com/dissect-project/old-website",
+      "homepage": "https://jekyll-serif.netlify.app",
+      "archived": false,
+      "fork": true
+    },
+    {
+      "name": "authenticated-zkp",
+      "description": "This repository contains the implementation and assessment tools for the authenticated witness binding scheme for ZKPs.",
+      "language": "Dart",
+      "stars": 0,
+      "pushedAt": "2026-11-12T11:08:55Z",
+      "url": "https://github.com/dissect-project/authenticated-zkp",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "dissect-project.github.io",
+      "description": ":triangular_ruler: Jekyll theme for building a personal site, blog, project documentation, or portfolio.",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2026-05-11T15:18:07Z",
+      "url": "https://github.com/dissect-project/dissect-project.github.io",
+      "homepage": "https://dissect-project.github.io",
+      "archived": false,
+      "fork": true
+    },
+    {
+      "name": "p4SD",
+      "description": "A lightweight anomaly detection system designed for software-defined networks (SDNs)",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2025-07-19T10:51:51Z",
+      "url": "https://github.com/dissect-project/p4SD",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "new-website",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2026-02-12T13:35:43Z",
+      "url": "https://github.com/dissect-project/new-website",
+      "homepage": "http://dissect-project.org/new-website/",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "nexus",
+      "description": "This repository contains Nexus, a proof-of-concept that aims to improve truth discovery by tracking reputation.",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2026-06-11T14:21:53Z",
+      "url": "https://github.com/dissect-project/nexus",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "nexus-testbed",
+      "description": "This repository contains the code to generate the datasets to test Nexus and the entire testbed to perform the assessments on Nexus.",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2026-06-11T14:55:38Z",
+      "url": "https://github.com/dissect-project/nexus-testbed",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    },
+    {
+      "name": "skald",
+      "description": "This repository contains Skald, a proof-of-concept that aims to improve truth discovery by tracking reputation.",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2026-06-30T09:53:06Z",
+      "url": "https://github.com/dissect-project/skald",
+      "homepage": "",
+      "archived": false,
+      "fork": false
+    }
+  ]
+}

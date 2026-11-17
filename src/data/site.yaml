@@ -1,0 +1,56 @@
+# Site-wide content. Edit this file to change text on the home page.
+# Anything starting with "TODO:" is a placeholder that still needs real content.
+
+name: DISSECT
+fullName: Digital InfraStructure SECurity assessmenT
+url: https://dissect-project.github.io
+
+# One sentence shown in the hero. (Taken from the old site; confirm or replace.)
+mission: A research group dedicated to creating security assessment tools to analyze the security posture of online services.
+
+# Short description used for search engines and social previews.
+description: DISSECT (Digital InfraStructure SECurity assessmenT) is a research group building tools to assess the security posture of online services.
+
+# Two short paragraphs for the About section.
+about:
+  - "TODO: add a paragraph on what DISSECT does."
+  - "TODO: add a paragraph on the lab and university DISSECT belongs to."
+
+lab:
+  name: "TODO: lab name"
+  url: ""            # optional
+university:
+  name: "TODO: university name"
+  url: ""            # optional
+
+contact:
+  email: "TODO: contact email"
+  address:
+    - "TODO: address line 1"
+    - "TODO: address line 2"
+
+github:
+  org: dissect-project
+
+# Research areas grid. Keep each description to one or two sentences.
+research:
+  - title: Certificate & TLS analysis
+    description: Building and validating certificate chains, checking trust, revocation, Certificate Transparency and algorithm strength.
+  - title: HTTP security headers
+    description: Measuring adoption and correctness of headers such as HSTS, CSP and related browser protections.
+  - title: HTTPS configuration
+    description: Assessing protocol versions, cipher suites and server configuration against current best practice.
+  - title: Vulnerability scanning
+    description: Identifying services exposed to known vulnerabilities across large sets of hosts.
+
+# Tools section (repositories are fetched from GitHub at build time).
+repos:
+  # Always hidden: .github, dissect-project.github.io, archived repos and forks.
+  exclude:
+    - new-website
+  # Featured repos are shown first with a longer description.
+  # `paper` is optional: a citation key from src/data/papers.bib.
+  featured:
+    - name: cert-info
+      description: "TODO: longer description of cert-info (the GitHub description is used until this is filled in)."
+      paper: ""      # TODO: citation key of the related paper, e.g. Ribeiro_2025

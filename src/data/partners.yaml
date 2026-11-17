@@ -1,0 +1,7 @@
+# Partners shown as a logo grid. If this list is empty the section is hidden.
+#
+# - name: Example Organisation
+#   url: https://example.org
+#   logo: example.svg          # file in src/assets/partners/
+#   description: One short line about the partnership.
+partners: []
